@@ -1,0 +1,57 @@
+managed implementation in class ZZABP_R_PKG_STD_007STU unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZAR_PKG_STD_007STU alias ZzarPkgStd007stu
+persistent table ZPKG_STD_007
+extensible
+draft table ZZAPKG_STD_DSTU
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   StudentID;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   StudentID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZPKG_STD_007 corresponding extensible
+  {
+    StudentID = STUDENT_ID;
+    FirstName = FIRST_NAME;
+    LastName = LAST_NAME;
+    Age = AGE;
+    Dob = DOB;
+    CourseName = COURSE_NAME;
+    CourseDuration = COURSE_DURATION;
+    StudentGender = STUDENT_GENDER;
+    StudentEmail = STUDENT_EMAIL;
+    StudentPhoneNumber = STUDENT_PHONE_NUMBER;
+    StudentAddress = STUDENT_ADDRESS;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

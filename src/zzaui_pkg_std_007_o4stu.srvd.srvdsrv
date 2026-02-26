@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZAC_PKG_STD_007STU'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZAC_PKG_STD_007STU'
+  }
+}
+define service ZZAUI_PKG_STD_007_O4STU provider contracts odata_v4_ui {
+  expose ZZAC_PKG_STD_007STU;
+}

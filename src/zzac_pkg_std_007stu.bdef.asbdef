@@ -1,0 +1,20 @@
+projection implementation in class ZZABP_C_PKG_STD_007STU unique;
+strict ( 2 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZZAC_PKG_STD_007STU alias ZzacPkgStd007stu
+extensible
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+}

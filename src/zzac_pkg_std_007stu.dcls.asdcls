@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZAC_PKG_STD_007STU'
+@MappingRole: true
+define role ZZAC_PKG_STD_007STU {
+  grant select on ZZAC_PKG_STD_007STU
+  where INHERITING CONDITIONS FROM ENTITY ZZAR_PKG_STD_007STU REPLACING { ROOT WITH _BaseEntity };
+}
